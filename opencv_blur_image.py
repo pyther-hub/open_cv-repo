@@ -18,7 +18,7 @@ def convert_image_to_table(image_path):
     print('done')
 
 
-def convert_table_to_image_1(blur_level: int = 1+1):
+def convert_table_to_image_1(blur_level: int = 1+1): #this takes only diagnol elements 
     blur_level += 1
     image_info = pickle.load(open('image_data.dat', 'rb'))
     data = image_info[0]
@@ -54,7 +54,7 @@ def convert_table_to_image_1(blur_level: int = 1+1):
         flag = False
 
 
-def convert_table_to_image_2(blur_level: int = 1+1):
+def convert_table_to_image_2(blur_level: int = 1+1): #this function takes all val in the box 
     blur_level += 1
     image_info = pickle.load(open('image_data.dat', 'rb'))
     data = image_info[0]
