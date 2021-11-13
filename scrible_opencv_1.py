@@ -1,5 +1,4 @@
 import pickle
-a = {2: 'g', 3: 'n'}
 data1 = pickle.load(open('image_data_1.dat', 'rb'))
 data2 = pickle.load(open('image_data.dat', 'rb'))
 numb = len(data1)

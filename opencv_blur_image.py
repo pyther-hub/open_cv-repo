@@ -15,10 +15,11 @@ def convert_image_to_table(image_path):
             b, g, r = image[y_pos, x_pos]
             all_data[(y_pos, x_pos)] = (r, g, b)
     pickle.dump([all_data, [width, depth]], IO_FILE)
-    print('done')
+    print('done ')
 
 
-def convert_table_to_image_1(blur_level: int = 1+1): #this takes only diagnol elements 
+# this takes only diagnol elements
+def convert_table_to_image_1(blur_level: int = 1+1):
     blur_level += 1
     image_info = pickle.load(open('image_data.dat', 'rb'))
     data = image_info[0]
@@ -54,7 +55,8 @@ def convert_table_to_image_1(blur_level: int = 1+1): #this takes only diagnol el
         flag = False
 
 
-def convert_table_to_image_2(blur_level: int = 1+1): #this function takes all val in the box 
+# this function takes all val in the box
+def convert_table_to_image_2(blur_level: int = 1+1):
     blur_level += 1
     image_info = pickle.load(open('image_data.dat', 'rb'))
     data = image_info[0]
@@ -86,5 +88,6 @@ def convert_table_to_image_2(blur_level: int = 1+1): #this function takes all va
                                  total_numb)), (x_pos, y_pos, blur_level, blur_level))
         pygame.display.update()
         flag = False
+
 
 convert_table_to_image_2(10)
